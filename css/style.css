@@ -317,3 +317,119 @@ body::before {
   display: flex;
   gap: .75rem;
 }
+
+/* ---------- Game Board ---------- */
+.game-board {
+  display: grid;
+  gap: 12px;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  animation: fadeSlideUp .6s var(--ease-out) .15s both;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 90px;
+  height: 110px;
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .55s var(--ease-spring);
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 2px solid transparent;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+/* Back (face-down) */
+.card-back {
+  background: var(--gradient-card);
+  border-color: var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.card-back::before {
+  content: '?';
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: .4;
+}
+
+.card:hover .card-back {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Front (face-up) */
+.card-front {
+  transform: rotateY(180deg);
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+.card-front .card-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Matched state */
+.card.matched .card-front {
+  border-color: var(--success);
+  box-shadow: 0 0 18px rgba(52,211,153,.3);
+  background: linear-gradient(145deg, rgba(52,211,153,.08), var(--bg-card));
+}
+
+.card.matched {
+  cursor: default;
+  animation: matchBounce .5s var(--ease-spring);
+}
+
+@keyframes matchBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* Mismatch shake */
+.card.mismatch .card-front {
+  border-color: var(--danger);
+  box-shadow: 0 0 14px rgba(248,113,113,.25);
+}
+
+.card.mismatch {
+  animation: shake .45s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
