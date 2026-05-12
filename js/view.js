@@ -47,4 +47,88 @@ class GameView {
   showConfigError(msg) {
     document.getElementById('configError').textContent = msg || '';
   }
+
+  /* ---- Game Screen ---- */
+  renderGameScreen(model) {
+    this.app.innerHTML = `
+      <header class="game-header">
+        <h1>Memory Scramble</h1>
+      </header>
+      <div class="game-hud" id="gameHud">
+        <div class="hud-item">
+          <span class="hud-label">Time Left</span>
+          <span class="hud-value timer" id="hudTimer">${model.formatTime(model.timeLeft)}</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Moves</span>
+          <span class="hud-value" id="hudMoves">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Matches</span>
+          <span class="hud-value" id="hudMatches">0 / ${model.totalPairs}</span>
+        </div>
+        <div class="hud-actions">
+          <button class="btn btn-secondary" id="btnRestart">🔄 Restart</button>
+          <button class="btn btn-danger" id="btnQuit">✕ Quit</button>
+        </div>
+      </div>
+      <div class="game-board" id="gameBoard" style="grid-template-columns: repeat(${model.cols}, 90px);">
+        ${model.cards.map(c => `
+          <div class="card" data-id="${c.id}" id="card-${c.id}">
+            <div class="card-inner">
+              <div class="card-face card-back"></div>
+              <div class="card-face card-front">
+                <span class="card-icon">${c.icon}</span>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+
+    // Responsive card sizing
+    if (model.cols > 6) {
+      const board = document.getElementById('gameBoard');
+      board.style.gridTemplateColumns = `repeat(${model.cols}, 70px)`;
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.width = '70px'; c.style.height = '88px';
+      });
+    }
+  }
+
+  /* ---- HUD Updates ---- */
+  updateTimer(text, isDanger) {
+    const el = document.getElementById('hudTimer');
+    if (!el) return;
+    el.textContent = text;
+    el.classList.toggle('danger', isDanger);
+  }
+
+  updateMoves(n)   { const e = document.getElementById('hudMoves');   if(e) e.textContent = n; }
+  updateMatches(n, t) { const e = document.getElementById('hudMatches'); if(e) e.textContent = `${n} / ${t}`; }
+
+  /* ---- Card Visual Updates ---- */
+  flipCard(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.add('flipped');
+  }
+
+  unflipCard(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.remove('flipped');
+  }
+
+  markMatched(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) { el.classList.add('matched'); el.classList.add('flipped'); }
+  }
+
+  showMismatch(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.add('mismatch');
+  }
+
+  clearMismatch(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.remove('mismatch');
+  }
+
 }
