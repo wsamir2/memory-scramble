@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Memory Scramble — Design System & Styles
    ============================================================ */
 
@@ -537,3 +537,32 @@ body::before {
     transform: scale(1) translateY(0);
   }
 }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .game-header h1 { font-size: 2rem; }
+  .config-panel { padding: 1.5rem; }
+  .config-row { grid-template-columns: 1fr; }
+  .card { width: 65px; height: 80px; }
+  .card-front .card-icon { font-size: 1.8rem; }
+  .card-back::before { font-size: 1.4rem; }
+  .game-board { gap: 8px; padding: 1rem; }
+  .hud-item { min-width: 90px; padding: .6rem 1rem; }
+  .hud-value { font-size: 1.3rem; }
+  .modal { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 420px) {
+  .card { width: 52px; height: 66px; }
+  .card-front .card-icon { font-size: 1.4rem; }
+  .game-board { gap: 6px; padding: .75rem; }
+  .game-hud { gap: 1rem; }
+}
+
+/* ---------- Utility ---------- */
+.hidden { display: none !important; }
+
+.text-center { text-align: center; }
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
