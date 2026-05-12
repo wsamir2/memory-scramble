@@ -79,4 +79,79 @@ class GameController {
     this._bindGameEvents();
     this._startTimer();
   }
+
+  _onCardClick(cardId) {
+    if (this.lockBoard) return;
+
+    const result = this.model.flipCard(cardId);
+
+    switch (result.action) {
+      case 'flip':
+        this.view.flipCard(cardId);
+        break;
+
+      case 'match':
+        this.view.flipCard(result.cardIds[1]); // second card
+        setTimeout(() => {
+          result.cardIds.forEach(id => this.view.markMatched(id));
+          this._updateHud();
+        }, 350);
+        break;
+
+      case 'mismatch':
+        this.view.flipCard(result.cardIds[1]);
+        this.lockBoard = true;
+        setTimeout(() => {
+          result.cardIds.forEach(id => this.view.showMismatch(id));
+        }, 400);
+        setTimeout(() => {
+          const ids = this.model.resetFlipped();
+          ids.forEach(id => { this.view.clearMismatch(id); this.view.unflipCard(id); });
+          this.lockBoard = false;
+          this._updateHud();
+        }, 1000);
+        break;
+
+      case 'win':
+        this.view.flipCard(result.cardIds[1]);
+        setTimeout(() => {
+          result.cardIds.forEach(id => this.view.markMatched(id));
+          this._updateHud();
+          this._stopTimer();
+          this.view.renderWinModal(this.model.moves, this.model.timeLeft, this.model.totalPairs, this.model.timeout);
+          this._bindModalEvents();
+        }, 500);
+        break;
+    }
+  }
+
+  /* ================================================================ */
+  /*  Timer                                                            */
+  /* ================================================================ */
+
+  _startTimer() {
+    this._stopTimer();
+    this.timerId = setInterval(() => {
+      const lost = this.model.tick();
+      this.view.updateTimer(this.model.formatTime(this.model.timeLeft), this.model.timeLeft <= 10);
+      if (lost) {
+        this._stopTimer();
+        this.view.renderLoseModal(this.model.moves, this.model.matches, this.model.totalPairs, this.model.timeout);
+        this._bindModalEvents();
+      }
+    }, 1000);
+  }
+
+  _stopTimer() {
+    if (this.timerId) { clearInterval(this.timerId); this.timerId = null; }
+  }
+
+  /* ================================================================ */
+  /*  HUD                                                              */
+  /* ================================================================ */
+
+  _updateHud() {
+    this.view.updateMoves(this.model.moves);
+    this.view.updateMatches(this.model.matches, this.model.totalPairs);
+  }
 }
