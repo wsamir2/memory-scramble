@@ -19,7 +19,7 @@ Table of Contents
 - [Git Workflow](#git-workflow)
 - [Team Members](#team-members)
 
-- 
+  
 Overview
 
 **Memory Scramble** is a single-player card game where the player flips face-down cards to find matching pairs. The player must match all pairs before the countdown timer reaches zero. The game supports configurable board sizes and time limits.
