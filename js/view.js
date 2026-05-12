@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Memory Scramble — View (MVC)
    Handles all DOM rendering and user-facing presentation.
    ============================================================ */
@@ -131,4 +131,45 @@ class GameView {
     if (el) el.classList.remove('mismatch');
   }
 
+  /* ---- Modals ---- */
+  renderWinModal(moves, timeLeft, totalPairs, totalTime) {
+    const elapsed = totalTime - timeLeft;
+    this._renderModal('modal-win', '🎉', 'You Win!',
+      'All pairs matched — great memory!', moves, elapsed, totalPairs);
+  }
+
+  renderLoseModal(moves, matches, totalPairs, totalTime) {
+    this._renderModal('modal-lose', '⏰', 'Time\'s Up!',
+      'You ran out of time. Better luck next time!', moves, totalTime, totalPairs, matches);
+  }
+
+  _renderModal(cls, icon, title, msg, moves, time, totalPairs, matched) {
+    const m = Math.floor(time / 60).toString().padStart(2, '0');
+    const s = (time % 60).toString().padStart(2, '0');
+    const matchDisplay = matched !== undefined ? matched : totalPairs;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.id = 'gameOverlay';
+    overlay.innerHTML = `
+      <div class="modal ${cls}">
+        <span class="modal-icon">${icon}</span>
+        <h2>${title}</h2>
+        <p>${msg}</p>
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-label">Moves</div><div class="stat-value">${moves}</div></div>
+          <div class="stat-item"><div class="stat-label">Time</div><div class="stat-value">${m}:${s}</div></div>
+          <div class="stat-item"><div class="stat-label">Matches</div><div class="stat-value">${matchDisplay}/${totalPairs}</div></div>
+          <div class="stat-item"><div class="stat-label">Board</div><div class="stat-value">${totalPairs * 2} cards</div></div>
+        </div>
+        <button class="btn btn-primary" id="btnPlayAgain">🔄 Play Again</button>
+        <button class="btn btn-secondary" id="btnBackMenu">🏠 Menu</button>
+      </div>`;
+    document.body.appendChild(overlay);
+  }
+
+  removeOverlay() {
+    const o = document.getElementById('gameOverlay');
+    if (o) o.remove();
+  }
 }
