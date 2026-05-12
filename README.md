@@ -18,28 +18,21 @@ Table of Contents
 - [Project Structure](#project-structure)
 - [Git Workflow](#git-workflow)
 - [Team Members](#team-members)
-
----
-
 Overview
 
 **Memory Scramble** is a single-player card game where the player flips face-down cards to find matching pairs. The player must match all pairs before the countdown timer reaches zero. The game supports configurable board sizes and time limits.
 
----
-
 Features
 
-- **Configurable Board Size** — Set rows and columns (total cells must be even).
-- **Configurable Time Limit** — Choose between 10 and 600 seconds.
-- **Countdown Timer** — Live timer displayed on screen during gameplay.
-- **Game Over** — Displays a message when the timer reaches zero before all cards are matched.
-- **Win Condition** — Congratulations modal when all pairs are matched.
-- **Card Flip Animation** — Smooth 3D flip animations with CSS transforms.
-- **Match/Mismatch Feedback** — Visual glow for matches, shake animation for mismatches.
-- **Responsive Design** — Works on desktop and mobile screens.
-- **MVC Architecture** — Clean separation of concerns.
-
----
+- Configurable Board Size — Set rows and columns (total cells must be even).
+- Configurable Time Limit — Choose between 10 and 600 seconds.
+- Countdown Timer — Live timer displayed on screen during gameplay.
+- Game Over — Displays a message when the timer reaches zero before all cards are matched.
+- Win Condition — Congratulations modal when all pairs are matched.
+- Card Flip Animation — Smooth 3D flip animations with CSS transforms.
+- Match/Mismatch Feedback — Visual glow for matches, shake animation for mismatches.
+- Responsive Design — Works on desktop and mobile screens.
+- MVC Architecture — Clean separation of concerns.
 
 Architecture
 
@@ -52,14 +45,8 @@ The project follows the **MVC (Model-View-Controller)** design pattern:
 | **Controller** | `js/controller.js`   | Event handling, game loop, orchestration           |
 | **Entry**      | `js/app.js`          | Bootstraps and wires MVC components                |
 
-### Data Flow
-
-```
+Data Flow
 User Action → Controller → Model (update state) → Controller → View (update DOM)
-```
-
----
-
 Technologies Used
 
 | Technology     | Purpose                          |
@@ -70,12 +57,8 @@ Technologies Used
 | Google Fonts   | Typography (Outfit font family)  |
 | Git & GitHub   | Version control and collaboration|
 
----
-
 How to Build & Run
-
 Prerequisites
-
 - A modern web browser (Chrome, Firefox, Edge, Safari).
 - No build tools, package managers, or servers required.
 
@@ -116,13 +99,13 @@ Then open `http://localhost:8080` in your browser.
 
 How to Play
 
-1. **Configure** — Set the number of rows, columns, and time limit.
-2. **Start** — Click "Start Game".
-3. **Flip** — Click any face-down card to reveal it.
-4. **Match** — Click a second card. If both icons match, they stay face-up.
-5. **Mismatch** — If the icons don't match, both cards flip back face-down.
-6. **Win** — Match all pairs before the timer runs out!
-7. **Lose** — If the timer reaches zero, the game is over.
+1. Configure — Set the number of rows, columns, and time limit.
+2. Start — Click "Start Game".
+3. Flip — Click any face-down card to reveal it.
+4. Match — Click a second card. If both icons match, they stay face-up.
+5. Mismatch — If the icons don't match, both cards flip back face-down.
+6. Win — Match all pairs before the timer runs out!
+7. Lose — If the timer reaches zero, the game is over.
 
 ---
 
