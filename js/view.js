@@ -104,4 +104,31 @@ class GameView {
 
   updateMoves(n)   { const e = document.getElementById('hudMoves');   if(e) e.textContent = n; }
   updateMatches(n, t) { const e = document.getElementById('hudMatches'); if(e) e.textContent = `${n} / ${t}`; }
+
+  /* ---- Card Visual Updates ---- */
+  flipCard(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.add('flipped');
+  }
+
+  unflipCard(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.remove('flipped');
+  }
+
+  markMatched(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) { el.classList.add('matched'); el.classList.add('flipped'); }
+  }
+
+  showMismatch(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.add('mismatch');
+  }
+
+  clearMismatch(id) {
+    const el = document.getElementById(`card-${id}`);
+    if (el) el.classList.remove('mismatch');
+  }
+
 }
