@@ -1,12 +1,13 @@
 # 🧠 Memory Scramble
 
+Live Demo
+ https://wsamir2.github.io/memory-scramble/ 
+
 A card-matching memory game built with **HTML, CSS, and JavaScript** using the **MVC (Model-View-Controller)** architecture pattern.
 
 ![Game Screenshot](docs/screenshot.png)
 
----
-
-## 📋 Table of Contents
+Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -20,13 +21,13 @@ A card-matching memory game built with **HTML, CSS, and JavaScript** using the *
 
 ---
 
-## 🎯 Overview
+Overview
 
 **Memory Scramble** is a single-player card game where the player flips face-down cards to find matching pairs. The player must match all pairs before the countdown timer reaches zero. The game supports configurable board sizes and time limits.
 
 ---
 
-## ✨ Features
+Features
 
 - **Configurable Board Size** — Set rows and columns (total cells must be even).
 - **Configurable Time Limit** — Choose between 10 and 600 seconds.
@@ -40,7 +41,7 @@ A card-matching memory game built with **HTML, CSS, and JavaScript** using the *
 
 ---
 
-## 🏗️ Architecture
+Architecture
 
 The project follows the **MVC (Model-View-Controller)** design pattern:
 
@@ -59,7 +60,7 @@ User Action → Controller → Model (update state) → Controller → View (upd
 
 ---
 
-## 🛠️ Technologies Used
+Technologies Used
 
 | Technology     | Purpose                          |
 | -------------- | -------------------------------- |
@@ -71,14 +72,14 @@ User Action → Controller → Model (update state) → Controller → View (upd
 
 ---
 
-## 🚀 How to Build & Run
+How to Build & Run
 
-### Prerequisites
+Prerequisites
 
 - A modern web browser (Chrome, Firefox, Edge, Safari).
 - No build tools, package managers, or servers required.
 
-### Option 1: Open Directly
+Option 1: Open Directly
 
 1. Clone the repository:
    ```bash
@@ -97,7 +98,7 @@ User Action → Controller → Model (update state) → Controller → View (upd
    xdg-open index.html
    ```
 
-### Option 2: Use a Local Server (recommended)
+Option 2: Use a Local Server (recommended)
 
 Using VS Code Live Server, Python, or Node:
 
@@ -113,7 +114,7 @@ Then open `http://localhost:8080` in your browser.
 
 ---
 
-## 🎮 How to Play
+How to Play
 
 1. **Configure** — Set the number of rows, columns, and time limit.
 2. **Start** — Click "Start Game".
@@ -125,7 +126,7 @@ Then open `http://localhost:8080` in your browser.
 
 ---
 
-## 📁 Project Structure
+Project Structure
 
 ```
 memory-scramble/
@@ -142,7 +143,7 @@ memory-scramble/
 
 ---
 
-## 🔀 Git Workflow
+Git Workflow
 
 This project was developed using a **feature-branch workflow**:
 
@@ -150,7 +151,7 @@ This project was developed using a **feature-branch workflow**:
 2. Branches were merged into `main` via `--no-ff` merges to preserve history.
 3. Commits follow the [Conventional Commits](https://www.conventionalcommits.org/) convention.
 
-### Branch Summary
+Branch Summary
 
 | Branch                     | Owner   | Purpose                          |
 | -------------------------- | ------- | -------------------------------- |
@@ -171,7 +172,7 @@ This project was developed using a **feature-branch workflow**:
 
 ---
 
-## 👥 Team Members
+👥 Team Members
 
 | Name                    | Role                        | GitHub                                                |
 | ----------------------- | --------------------------- | ----------------------------------------------------- |
@@ -181,22 +182,22 @@ This project was developed using a **feature-branch workflow**:
 
 ---
 
-## 📸 Screenshots
+Screenshots
 
-### Configuration Screen
+Configuration Screen
 ![Config Screen](docs/config-screen.png)
 
-### Game Board
+Game Board
 ![Game Board](docs/game-board.png)
 
-### Win Modal
+Win Modal
 ![Win Modal](docs/win-modal.png)
 
-### Game Over
+Game Over
 ![Game Over](docs/game-over.png)
 
 ---
 
-## 📄 License
+License
 
 This project is developed for educational purposes.
