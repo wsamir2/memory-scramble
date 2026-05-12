@@ -4,6 +4,10 @@
 
 A card-matching memory game built with HTML, CSS, and JavaScript using the MVC (Model-View-Controller) architecture pattern.
 
+![HTML5](https://img.shields.io/badge/HTML5-Structure-orange)
+![CSS3](https://img.shields.io/badge/CSS3-Styling-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-Logic-yellow)
+![MVC](https://img.shields.io/badge/Architecture-MVC-purple)
 ![Game Screenshot](docs/screenshot.png)
 
 Table of Contents
