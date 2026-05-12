@@ -1,0 +1,319 @@
+﻿/* ============================================================
+   Memory Scramble — Design System & Styles
+   ============================================================ */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Palette — dark aurora theme */
+  --bg-primary:    #0a0e1a;
+  --bg-secondary:  #111827;
+  --bg-card:       #1e293b;
+  --bg-card-hover: #2d3a50;
+  --surface:       rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-glow:   rgba(129, 140, 248, 0.35);
+
+  --text-primary:   #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+
+  --accent:        #818cf8;
+  --accent-light:  #a5b4fc;
+  --accent-dark:   #6366f1;
+  --success:       #34d399;
+  --success-dark:  #059669;
+  --danger:        #f87171;
+  --danger-dark:   #dc2626;
+  --warning:       #fbbf24;
+  --info:          #38bdf8;
+
+  /* Gradients */
+  --gradient-accent: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+  --gradient-card:   linear-gradient(145deg, rgba(129,140,248,.12) 0%, rgba(192,132,252,.08) 100%);
+  --gradient-bg:     radial-gradient(ellipse at 20% 50%, rgba(99,102,241,.15) 0%, transparent 50%),
+                     radial-gradient(ellipse at 80% 20%, rgba(192,132,252,.10) 0%, transparent 50%),
+                     radial-gradient(ellipse at 50% 80%, rgba(244,114,182,.08) 0%, transparent 50%);
+
+  /* Sizing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.25);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.35);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.45);
+  --shadow-glow: 0 0 20px rgba(129,140,248,.25);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--gradient-bg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Layout ---------- */
+#app {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Header / Title ---------- */
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: .25rem;
+  animation: titlePulse 4s ease-in-out infinite alternate;
+}
+
+.game-header p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+@keyframes titlePulse {
+  0%   { filter: brightness(1); }
+  100% { filter: brightness(1.25); }
+}
+
+/* ---------- Config Panel ---------- */
+.config-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  animation: fadeSlideUp .6s var(--ease-out) both;
+}
+
+.config-panel h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  text-align: center;
+  color: var(--accent-light);
+}
+
+.config-group {
+  margin-bottom: 1.5rem;
+}
+
+.config-group label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.config-group input,
+.config-group select {
+  width: 100%;
+  padding: .85rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+.config-group input:focus,
+.config-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(129,140,248,.2);
+}
+
+.config-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.config-error {
+  color: var(--danger);
+  font-size: .85rem;
+  margin-top: .4rem;
+  min-height: 1.2em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 2rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all .3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.1);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(129,140,248,.35);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 30px rgba(129,140,248,.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger) 0%, var(--danger-dark) 100%);
+  color: #fff;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: .5rem;
+}
+
+/* ---------- Game HUD ---------- */
+.game-hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  animation: fadeSlideUp .5s var(--ease-out) both;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: .75rem 1.5rem;
+  min-width: 120px;
+}
+
+.hud-label {
+  font-size: .7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: .25rem;
+}
+
+.hud-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-value.timer {
+  color: var(--accent-light);
+}
+
+.hud-value.timer.danger {
+  color: var(--danger);
+  animation: pulse .6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 1; }
+  to   { opacity: .5; }
+}
+
+.hud-actions {
+  display: flex;
+  gap: .75rem;
+}
