@@ -179,7 +179,9 @@ Game Board
 ![Game Board](docs/game-board.png)
 
 Win Modal
+
 ![Win Modal](docs/win-modal.png)
+
 
 Game Over
 ![Game Over](docs/game-over.png)
