@@ -1,5 +1,5 @@
 /* ============================================================
-   Memory Scramble — Design System & Styles
+   Memory Scramble — Design System & Styles sheet
    ============================================================ */
 
 /* ---------- Google Font ---------- */
@@ -98,7 +98,7 @@ body::before {
   padding: 2rem 1rem;
 }
 
-/* ---------- Header / Title ---------- */
+/* ---------------- Header / Title --------------- */
 .game-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -127,7 +127,7 @@ body::before {
   100% { filter: brightness(1.25); }
 }
 
-/* ---------- Config Panel ---------- */
+/* ----------------------- Config Panel ---------------------- */
 .config-panel {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -194,7 +194,7 @@ body::before {
   min-height: 1.2em;
 }
 
-/* ---------- Buttons ---------- */
+/* --------------------------------- Buttons ----------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -261,7 +261,7 @@ body::before {
   margin-top: .5rem;
 }
 
-/* ---------- Game HUD ---------- */
+/* ---------------------------- Game HUD ----------------------------- */
 .game-hud {
   display: flex;
   align-items: center;
@@ -318,7 +318,7 @@ body::before {
   gap: .75rem;
 }
 
-/* ---------- Game Board ---------- */
+/* -------------------------------- Game Board ---------------------------- */
 .game-board {
   display: grid;
   gap: 12px;
@@ -331,7 +331,7 @@ body::before {
   animation: fadeSlideUp .6s var(--ease-out) .15s both;
 }
 
-/* ---------- Card ---------- */
+/* ----------------------------- Card ------------------------------- */
 .card {
   width: 90px;
   height: 110px;
