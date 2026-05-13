@@ -112,7 +112,7 @@ How to Play
 2. Start — Click "Start Game".
 3. Flip — Click any face-down card to reveal it.
 4. Match — Click a second card. If both icons match, they stay face-up.
-5. Mismatch — If the icons don't match, both cards flip back face-down.
+5. Mismatch — If the icons don't match, both cards flip back face down.
 6. Win — Match all pairs before the timer runs out!
 7. Lose — If the timer reaches zero, the game is over.
 
@@ -136,6 +136,7 @@ memory-scramble/
 ---
 
 Git Workflow
+Feature branches were reviewed and merged using Pull Requests to preserve collaboration history.
 
 This project was developed using a **feature-branch workflow**:
 
