@@ -149,7 +149,7 @@ class GameController {
   /* ================================================================ */
   /*                          HUD                                     */
   /* ================================================================ */
-
+// Refresh HUD statistics after each player action
   _updateHud() {
     this.view.updateMoves(this.model.moves);
     this.view.updateMatches(this.model.matches, this.model.totalPairs);
