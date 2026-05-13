@@ -1,6 +1,10 @@
 # 🧠 Memory Scramble
 
-[![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](https://wsamir2.github.io/memory-scramble/)
+## 🎮 Live Demo
+
+👉 **[Play Memory Scramble Online](https://wsamir2.github.io/memory-scramble/)**
+
+[![Play Memory Scramble](https://img.shields.io/badge/🎮%20Play%20Memory%20Scramble-Live%20Demo-success?style=for-the-badge)](https://wsamir2.github.io/memory-scramble/)
 
 A card-matching memory game built with HTML, CSS, and JavaScript using the MVC (Model-View-Controller) architecture pattern.
 
