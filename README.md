@@ -143,24 +143,28 @@ This project was developed using a **feature-branch workflow**:
 2. Branches were merged into `main` via `--no-ff` merges to preserve history.
 3. Commits follow the [Conventional Commits](https://www.conventionalcommits.org/) convention.
 
-Branch Summary
+## 🌿 Branch Summary
 
-| Branch                     | Owner   | Purpose                          |
-| -------------------------- | ------- | -------------------------------- |
-| `feature/project-setup`   | Duaa    | Initial scaffold and .gitignore  |
-| `feature/html-structure`  | Walid   | HTML shell                       |
-| `feature/ui-base-styles`  | Walid   | CSS design system                |
-| `feature/card-model`      | Monica  | Card class and enums             |
-| `feature/game-logic`      | Monica  | GameModel, shuffle, matching     |
-| `feature/config-view`     | Walid   | Config screen UI                 |
-| `feature/board-view`      | Walid   | Game board rendering             |
-| `feature/controller-core` | Duaa    | Controller + event binding       |
-| `feature/timer-system`    | Duaa    | Countdown timer                  |
-| `feature/card-animations` | Walid   | CSS flip/shake animations        |
-| `feature/modal-views`     | Walid   | Win/Lose modals                  |
-| `feature/hud-updates`     | Duaa    | MVC wiring + integration         |
-| `feature/responsive-design`| Walid  | Mobile breakpoints               |
-| `feature/documentation`   | Duaa    | README and docs                  |
+| Branch                                | Owner  | Purpose                                                              |
+| ------------------------------------- | ------ | -------------------------------------------------------------------- |
+| `feature/project-setup`               | Duaa   | Initial repository setup, MVC folder structure, and `.gitignore`     |
+| `feature/html-structure`              | Walid  | Base HTML layout and MVC script integration                          |
+| `feature/ui-base-styles`              | Walid  | CSS design system, dark aurora theme, typography, and layout styling |
+| `feature/card-model`                  | Monica | Card class, card states, and game phase enums                        |
+| `feature/game-logic`                  | Monica | Shuffle algorithm, matching logic, validation, and gameplay rules    |
+| `feature/config-view`                 | Walid  | Game setup/configuration screen UI                                   |
+| `feature/board-view`                  | Walid  | Dynamic game board rendering and responsive card layout              |
+| `feature/controller-core`             | Duaa   | Event binding, controller orchestration, and gameplay flow           |
+| `feature/timer-system`                | Duaa   | Countdown timer logic and lose-condition handling                    |
+| `feature/card-animations`             | Walid  | Card flip, match, mismatch, and hover animations                     |
+| `feature/modal-views`                 | Walid  | Win/Lose modals and overlay presentation                             |
+| `feature/hud-updates`                 | Duaa   | HUD statistics updates and MVC integration flow                      |
+| `feature/responsive-design`           | Walid  | Mobile responsiveness and adaptive board sizing                      |
+| `feature/documentation`               | Duaa   | README documentation, workflow notes, and deployment instructions    |
+| `feature/game-logic-polish`           | Monica | Logic documentation, shuffle comments, and readability improvements  |
+| `feature/ui-polish`                   | Walid  | README demo enhancements and responsive UI refinements               |
+| `feature/controller-docs-enhancement` | Duaa   | Controller documentation and workflow clarification                  |
+
 
 ---
 
