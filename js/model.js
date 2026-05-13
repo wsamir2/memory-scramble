@@ -96,7 +96,7 @@ class GameModel {
   }
 
   _pickIcons(n) { const p = [...ICON_POOL]; this._shuffle(p); return p.slice(0, n); }
-
+// Fisher-Yates shuffle for random card distribution
   _shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
