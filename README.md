@@ -132,8 +132,9 @@ How to Play
 7. Lose — If the timer reaches zero, the game is over.
 
 ---
-📁 Project Structure
----
+## 📁 Project Structure
+
+```text
 memory-scramble/
 ├── index.html
 ├── css/
@@ -156,8 +157,7 @@ memory-scramble/
 │   ├── win-modal.png
 │   └── game-over.png
 └── README.md
-
----
+```
 
 🔀 Git Workflow
 
