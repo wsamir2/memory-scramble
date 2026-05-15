@@ -210,18 +210,30 @@ Commits follow the Conventional Commits standard
 
 The game includes integrated gameplay sound effects to improve user interaction and gameplay feedback.
 
-Included Sound Effects
-Event	Audio
-Card Flip	flip.mp3
-Successful Match	match.mp3
-Wrong Match	wrong.mp3
-Game Win	win.mp3
+### 🎵 Included Sound Effects
+
+| Event            | Audio File  |
+| ---------------- | ----------- |
+| Card Flip        | `flip.mp3`  |
+| Successful Match | `match.mp3` |
+| Wrong Match      | `wrong.mp3` |
+| Game Win         | `win.mp3`   |
+
 ---
-assets/sounds/
-├── flip.mp3
-├── match.mp3
-├── wrong.mp3
-└── win.mp3
+
+### 📂 Audio Assets Location
+
+```text id="fixaudio1"
+assets/
+└── sounds/
+    ├── flip.mp3
+    ├── match.mp3
+    ├── wrong.mp3
+    └── win.mp3
+```
+
+The audio system is integrated through the MVC controller layer and triggered dynamically during gameplay interactions.
+
 ---
 ## Screenshots
 
