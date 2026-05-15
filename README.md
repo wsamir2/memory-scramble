@@ -206,7 +206,7 @@ Commits follow the Conventional Commits standard
 | Duaa Hisham El Zain     | Controller / Timer / Docs    | [@duaa-hisham](https://github.com/duaa-hisham)        |
 
 ---
-🔊 Audio System
+## 🔊 Audio System
 
 The game includes integrated gameplay sound effects to improve user interaction and gameplay feedback.
 
