@@ -58,7 +58,7 @@ The game supports:
 - MVC Architecture — Clean separation of concerns
 - Keyboard Friendly — Supports Enter key on setup screen
 
-## Architecture
+## 🏗️ Architecture
 
 The project follows the **MVC (Model-View-Controller)** design pattern:
 
@@ -71,7 +71,7 @@ The project follows the **MVC (Model-View-Controller)** design pattern:
 
 Data Flow
 User Action → Controller → Model (update state) → Controller → View (update DOM)
-## Technologies Used
+## 🛠️ Technologies Used
 
 | Technology     | Purpose                          |
 | -------------- | -------------------------------- |
@@ -235,7 +235,7 @@ assets/
 The audio system is integrated through the MVC controller layer and triggered dynamically during gameplay interactions.
 
 ---
-## Screenshots
+## 📸 Screenshots
 
 Configuration Screen
 ![Config Screen](docs/config-screen.png)
@@ -253,6 +253,6 @@ Game Over
 
 ---
 
-## 📄License
+## 📄 License
 
 This project is developed for educational purposes.
