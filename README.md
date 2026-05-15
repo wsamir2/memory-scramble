@@ -14,20 +14,23 @@ A card-matching memory game built with HTML, CSS, and JavaScript using the MVC (
 ![MVC](https://img.shields.io/badge/Architecture-MVC-purple)
 ![Game Screenshot](docs/screenshot.png)
 
+```md id="zh6ru8"
 # 📋 Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
-- [Architecture](#-architecture)
-- [Technologies Used](#-technologies-used)
+- [Architecture](#️-architecture)
+- [Technologies Used](#️-technologies-used)
 - [How to Build & Run](#-how-to-build--run)
 - [How to Play](#-how-to-play)
 - [Project Structure](#-project-structure)
 - [Git Workflow](#-git-workflow)
+- [Branch Summary](#-branch-summary)
 - [Team Members](#-team-members)
 - [Audio System](#-audio-system)
 - [Screenshots](#-screenshots)
 - [License](#-license)
+```
 
   
 ## 🎯 Overview
