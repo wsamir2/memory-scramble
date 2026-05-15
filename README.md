@@ -14,41 +14,56 @@ A card-matching memory game built with HTML, CSS, and JavaScript using the MVC (
 ![MVC](https://img.shields.io/badge/Architecture-MVC-purple)
 ![Game Screenshot](docs/screenshot.png)
 
-Table of Contents
+# 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Technologies Used](#technologies-used)
-- [How to Build & Run](#how-to-build--run)
-- [How to Play](#how-to-play)
-- [Project Structure](#project-structure)
-- [Git Workflow](#git-workflow)
-- [Team Members](#team-members)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Technologies Used](#-technologies-used)
+- [How to Build & Run](#-how-to-build--run)
+- [How to Play](#-how-to-play)
+- [Project Structure](#-project-structure)
+- [Git Workflow](#-git-workflow)
+- [Team Members](#-team-members)
+- [Audio System](#-audio-system)
+- [Screenshots](#-screenshots)
+- [License](#-license)
 
   
-Overview
+## 🎯 Overview
 
-**Memory Scramble** is a single-player card game where the player flips face-down cards to find matching pairs. The player must match all pairs before the countdown timer reaches zero. The game supports configurable board sizes and time limits.
+**Memory Scramble** is a single-player card game where the player flips face-down cards to find matching pairs. The player must match all pairs before the countdown timer reaches zero.
 
-Features
+The game supports:
+- Configurable board sizes
+- Adjustable time limits
+- Responsive gameplay
+- Animated card interactions
+- Gameplay sound effects
+- MVC-based architecture
 
-- Configurable Board Size — Set rows and columns (total cells must be even).
-- Configurable Time Limit — Choose between 10 and 600 seconds.
-- Countdown Timer — Live timer displayed on screen during gameplay.
-- Game Over — Displays a message when the timer reaches zero before all cards are matched.
-- Win Condition — Congratulations modal when all pairs are matched.
-- Card Flip Animation — Smooth 3D flip animations with CSS transforms.
-- Match/Mismatch Feedback — Visual glow for matches, shake animation for mismatches.
-- Responsive Design — Works on desktop and mobile screens.
-- MVC Architecture — Clean separation of concerns.
+---
+
+## ✨ Features
+
+- Configurable Board Size — Set rows and columns (total cells must be even)
+- Configurable Time Limit — Choose between 10 and 600 seconds
+- Countdown Timer — Live timer displayed on screen during gameplay
+- Game Over — Displays a message when the timer reaches zero before all cards are matched
+- Win Condition — Congratulations modal when all pairs are matched
+- Card Flip Animation — Smooth 3D flip animations with CSS transforms
+- Match/Mismatch Feedback — Visual glow for matches and shake animation for mismatches
+- Gameplay Sound Effects — Audio feedback for card flips, matches, mismatches, and winning states
+- Responsive Design — Works on desktop and mobile screens
+- MVC Architecture — Clean separation of concerns
+- Keyboard Friendly — Supports Enter key on setup screen
 
 Architecture
 
 The project follows the **MVC (Model-View-Controller)** design pattern:
 
-| Layer          | File                 | Responsibility                                    |
-| -------------- | -------------------- | ------------------------------------------------- |
+| Layer          | File                 | Responsibility                                     |
+| -------------- | -------------------- | -------------------------------------------------  |
 | **Model**      | `js/model.js`        | Game state, card data, validation, business logic  |
 | **View**       | `js/view.js`         | DOM rendering, UI updates, modals                  |
 | **Controller** | `js/controller.js`   | Event handling, game loop, orchestration           |
@@ -66,10 +81,10 @@ Technologies Used
 | Google Fonts   | Typography (Outfit font family)  |
 | Git & GitHub   | Version control and collaboration|
 
-How to Build & Run
-Prerequisites
-- A modern web browser (Chrome, Firefox, Edge, Safari).
-- No build tools, package managers, or servers required.
+🚀 How to Build & Run
+📌 Prerequisites
+A modern web browser (Chrome, Firefox, Edge, Safari)
+No build tools, package managers, or servers required
 
 Option 1: Open Directly
 
@@ -117,41 +132,53 @@ How to Play
 7. Lose — If the timer reaches zero, the game is over.
 
 ---
-
-Project Structure
-
-```
+📁 Project Structure
+---
 memory-scramble/
-├── index.html          # Main HTML page
+├── index.html
 ├── css/
-│   └── style.css       # All styles and animations
+│   └── style.css
 ├── js/
-│   ├── model.js        # Model — game state & logic
-│   ├── view.js         # View — DOM rendering
-│   ├── controller.js   # Controller — event handling
-│   └── app.js          # Entry point
-└── README.md           # This file
-```
+│   ├── model.js
+│   ├── view.js
+│   ├── controller.js
+│   └── app.js
+├── assets/
+│   └── sounds/
+│       ├── flip.mp3
+│       ├── match.mp3
+│       ├── wrong.mp3
+│       └── win.mp3
+├── docs/
+│   ├── screenshot.png
+│   ├── config-screen.png
+│   ├── game-board.png
+│   ├── win-modal.png
+│   └── game-over.png
+└── README.md
 
 ---
 
-Git Workflow
+🔀 Git Workflow
+
 Feature branches were reviewed and merged using Pull Requests to preserve collaboration history.
 
-This project was developed using a **feature-branch workflow**:
+This project was developed using a feature-branch workflow:
 
-1. Each team member worked on dedicated feature branches.
-2. Branches were merged into `main` via `--no-ff` merges to preserve history.
-3. Commits follow the [Conventional Commits](https://www.conventionalcommits.org/) convention.
+Each team member worked on dedicated feature branches
+Branches were merged into main using Pull Requests
+Merge history was preserved to track collaboration
+Commits follow the Conventional Commits standard
+
 
 ## 🌿 Branch Summary
 
-| Branch                                | Owner  | Purpose                                                              |
-| ------------------------------------- | ------ | -------------------------------------------------------------------- |
+| 🌿 Branch                             | 👤 Owner   | 🚀 Purpose                                                           |
+| ------------------------------------- | ---------- | -------------------------------------------------------------------- |
 | `feature/project-setup`               | Duaa   | Initial repository setup, MVC folder structure, and `.gitignore`     |
 | `feature/html-structure`              | Walid  | Base HTML layout and MVC script integration                          |
 | `feature/ui-base-styles`              | Walid  | CSS design system, dark aurora theme, typography, and layout styling |
-| `feature/card-model`                  | Monica | Card class, card states, and game phase enums                        |
+| `feature/card-model`                  | Monica | Card class implementation, card states, and game phase enums         |
 | `feature/game-logic`                  | Monica | Shuffle algorithm, matching logic, validation, and gameplay rules    |
 | `feature/config-view`                 | Walid  | Game setup/configuration screen UI                                   |
 | `feature/board-view`                  | Walid  | Dynamic game board rendering and responsive card layout              |
@@ -165,7 +192,8 @@ This project was developed using a **feature-branch workflow**:
 | `feature/game-logic-polish`           | Monica | Logic documentation, shuffle comments, and readability improvements  |
 | `feature/ui-polish`                   | Walid  | README demo enhancements and responsive UI refinements               |
 | `feature/controller-docs-enhancement` | Duaa   | Controller documentation and workflow clarification                  |
-
+| `feature/sound-effects`               | Walid  | Gameplay sound effects integration and audio feedback system         |
+| `feature/audio-assets`                | Monica | Upload and management of gameplay audio assets                       |
 
 ---
 
