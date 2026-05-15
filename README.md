@@ -58,7 +58,7 @@ The game supports:
 - MVC Architecture — Clean separation of concerns
 - Keyboard Friendly — Supports Enter key on setup screen
 
-Architecture
+## Architecture
 
 The project follows the **MVC (Model-View-Controller)** design pattern:
 
@@ -81,7 +81,7 @@ Technologies Used
 | Google Fonts   | Typography (Outfit font family)  |
 | Git & GitHub   | Version control and collaboration|
 
-🚀 How to Build & Run
+## 🚀 How to Build & Run
 📌 Prerequisites
 A modern web browser (Chrome, Firefox, Edge, Safari)
 No build tools, package managers, or servers required
