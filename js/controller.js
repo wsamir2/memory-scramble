@@ -1,4 +1,4 @@
-```javascript
+
 /* ============================================================
    Memory Scramble — Controller (MVC)
    Orchestrates Model & View, handles events and game loop.
