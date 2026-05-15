@@ -71,7 +71,7 @@ The project follows the **MVC (Model-View-Controller)** design pattern:
 
 Data Flow
 User Action → Controller → Model (update state) → Controller → View (update DOM)
-Technologies Used
+## Technologies Used
 
 | Technology     | Purpose                          |
 | -------------- | -------------------------------- |
@@ -121,7 +121,7 @@ Then open `http://localhost:8080` in your browser.
 
 ---
 
-How to Play
+## How to Play
 
 1. Configure — Set the number of rows, columns, and time limit.
 2. Start — Click "Start Game".
@@ -159,7 +159,7 @@ memory-scramble/
 └── README.md
 ```
 
-🔀 Git Workflow
+## 🔀 Git Workflow
 
 Feature branches were reviewed and merged using Pull Requests to preserve collaboration history.
 
@@ -197,7 +197,7 @@ Commits follow the Conventional Commits standard
 
 ---
 
-👥 Team Members
+## 👥 Team Members
 
 | Name                    | Role                        | GitHub                                                |
 | ----------------------- | --------------------------- | ----------------------------------------------------- |
@@ -207,7 +207,7 @@ Commits follow the Conventional Commits standard
 
 ---
 
-Screenshots
+## Screenshots
 
 Configuration Screen
 ![Config Screen](docs/config-screen.png)
@@ -225,6 +225,6 @@ Game Over
 
 ---
 
-License
+## License
 
 This project is developed for educational purposes.
