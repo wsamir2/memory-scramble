@@ -121,7 +121,7 @@ Then open `http://localhost:8080` in your browser.
 
 ---
 
-## How to Play
+## 🎮 How to Play
 
 1. Configure — Set the number of rows, columns, and time limit.
 2. Start — Click "Start Game".
@@ -206,7 +206,23 @@ Commits follow the Conventional Commits standard
 | Duaa Hisham El Zain     | Controller / Timer / Docs    | [@duaa-hisham](https://github.com/duaa-hisham)        |
 
 ---
+🔊 Audio System
 
+The game includes integrated gameplay sound effects to improve user interaction and gameplay feedback.
+
+Included Sound Effects
+Event	Audio
+Card Flip	flip.mp3
+Successful Match	match.mp3
+Wrong Match	wrong.mp3
+Game Win	win.mp3
+---
+assets/sounds/
+├── flip.mp3
+├── match.mp3
+├── wrong.mp3
+└── win.mp3
+---
 ## Screenshots
 
 Configuration Screen
@@ -225,6 +241,6 @@ Game Over
 
 ---
 
-## License
+## 📄License
 
 This project is developed for educational purposes.
